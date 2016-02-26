@@ -90,25 +90,50 @@ def playgame
 		participants = players
 		puts "#{participants[0]} LOL"
 		puts "#{participants[1]} HA"
+		puts
+		puts "This is a new game. Board numbers are as follows:"
+		board = (0..8).to_a
+		show_board(board)
 
+		puts
+		puts 
+		
+		game(board)
 
 		more = play_again?
 	end
 end
 
 def show_board(board)
-	count = 0
+	puts
 	3.times do |row|
 		puts board[row * 3,3].join(" | ")
 	end
 end
 
-def take_turn
+def game(board)
+
+	3.times do |row|
+		puts board[row * 3,3].join(" | ")
+	end
+end
+
+def take_turn(currentplayer)
+	puts currentplayer; "Enter your desired location [0-8]: "
+	selection = gets.chomp
+	if selection <= 8 || selection >=0
+	end
+	return selection
 end 
+
 def tictactoe
 	greeting
 	playgame
-	show_board
+
+	#participants = Array.new(2)
+	#participants = players
+	#current_turn = players[0]
+
 end
 
 tictactoe
