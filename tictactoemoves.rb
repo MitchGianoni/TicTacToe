@@ -9,19 +9,8 @@ def game(board)
 	puts board[6,3].join(" | ")
 end
 
-def play_game
-end
-
-def tictactoe
+def play_game(board)
 	turncount = 0
-	turncheck = "X"
-
-	puts
-	board = ["0","1","2","3","4","5","6","7","8"]
-	game(board)
-	puts
-	board = [" "," "," "," "," "," "," "," "," "]
-
 	until turncount == 9
 		if turncount.odd?
 			currentsymbol = "X"
@@ -44,6 +33,18 @@ def tictactoe
 			turncheck = nil
 		end
 	end
+
+end
+
+def tictactoe
+
+	puts
+	board = ["0","1","2","3","4","5","6","7","8"]
+	game(board)
+	puts
+	board = [" "," "," "," "," "," "," "," "," "]
+
+	play_game(board)
 end
 
 tictactoe
